@@ -23,7 +23,7 @@ jobs:
       - name: 🧪 Run Tests
         run: mvn clean test
 
-      - name: 🧾 Debug: Show report folders
+      - name: 🧾 Debug:Show report folders
         run: |
           echo "target/surefire-reports:"
           ls -l target/surefire-reports || echo "❌ Missing"
