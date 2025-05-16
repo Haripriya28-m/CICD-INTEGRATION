@@ -1,6 +1,5 @@
 name: Adactin Hotel Booking Automation
 
-
 on:
   push:
     branches: [ master ]
@@ -9,38 +8,27 @@ on:
 
 jobs:
   run-selenium-tests:
-    name: Run Selenium Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: ☕ Set up JDK 17
+      - name: ☕ Set up Java
         uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 💾 Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven
-
-      - name: 🧪 Build and Run Tests
+      - name: 📦 Build with Maven
         run: mvn clean test
 
-      - name: 🧾 Show report files
-        run: ls -R target/surefire-reports || echo "No reports found"
+      - name: 🧾 List report files
+        run: ls -l target/surefire-reports || echo "No reports found"
 
-      - name: 📤 Upload Test Reports
+      - name: 📤 Upload TestNG Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-reports
+          name: testng-reports
           path: target/surefire-reports/
-
