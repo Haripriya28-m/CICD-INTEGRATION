@@ -20,11 +20,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 📦 Build with Maven
+      - name: 📦 Run Tests with Maven
         run: mvn clean test
 
-      - name: 🧾 List report files
-        run: ls -l target/surefire-reports || echo "No reports found"
+      - name: 🧾 Check if reports were generated
+        run: |
+          echo "Listing contents of target directory:"
+          ls -l target
+          echo "Listing contents of surefire-reports:"
+          ls -l target/surefire-reports || echo "❌ surefire-reports folder not found"
 
       - name: 📤 Upload TestNG Reports
         if: always()
