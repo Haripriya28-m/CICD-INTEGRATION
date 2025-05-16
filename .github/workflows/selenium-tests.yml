@@ -1,11 +1,11 @@
 name: Adactin Hotel Booking Automation
 
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   run-selenium-tests:
@@ -31,7 +31,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven
 
-      - name: 🧪 Run Tests with Maven
+      - name: 🧪 Build and Run Tests
         run: mvn clean test
 
       - name: 📤 Upload Test Reports
