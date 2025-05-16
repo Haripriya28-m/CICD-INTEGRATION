@@ -34,9 +34,13 @@ jobs:
       - name: 🧪 Build and Run Tests
         run: mvn clean test
 
+      - name: 🧾 Show report files
+        run: ls -R target/surefire-reports || echo "No reports found"
+
       - name: 📤 Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-reports
           path: target/surefire-reports/
+
