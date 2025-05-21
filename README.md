@@ -64,3 +64,6 @@ mvn clean test
 
 - After each GitHub Actions run, test reports are available under the Actions > Run > Artifacts section. These reports are generated using Maven Surefire.
 Workflow File: .github/workflows/selenium-tests.yml
+
+## OUTPUT
+![Image](https://github.com/user-attachments/assets/05899755-f51d-4589-a3e3-d1a074bafa89)
