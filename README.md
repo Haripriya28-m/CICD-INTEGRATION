@@ -51,7 +51,7 @@ HotelBookingAutomation/
 
 mvn clean test
 
-##GitHub Actions CI/CD
+## GitHub Actions CI/CD
 - This project uses GitHub Actions to automatically run tests on:
 
 - Pushes to the main branch
@@ -60,7 +60,7 @@ mvn clean test
 
 - Workflow File: .github/workflows/selenium-tests.yml
 
-##Test Reports
+## Test Reports
 
 - After each GitHub Actions run, test reports are available under the Actions > Run > Artifacts section. These reports are generated using Maven Surefire.
 Workflow File: .github/workflows/selenium-tests.yml
