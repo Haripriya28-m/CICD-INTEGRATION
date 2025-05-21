@@ -1,4 +1,4 @@
-# CI/CD INTEGRATION
+## CI/CD INTEGRATION
 
 COMPANY: CODTECH IT SOLUTIONS
 
@@ -12,7 +12,7 @@ DURATION: 8 WEEKS
 
 MENTOR: NEELA SANTOSH
 
-# Adactin Hotel Booking Automation
+## Adactin Hotel Booking Automation
 
 This project automates the hotel booking process on [Adactin Hotel App](https://adactinhotelapp.com/) using **Selenium WebDriver**, **Java**, **TestNG**, and **Maven**. CI/CD integration is set up using **GitHub Actions** to run tests automatically on every push or pull request.
 
